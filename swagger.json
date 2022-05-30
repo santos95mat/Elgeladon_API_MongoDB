@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Elgeladon",
+    "description": "API para CRUD de Paletas",
+    "termsOfService": "",
+    "contact": {
+      "email": "santos95.mat@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/paletas",
+      "description": "API de teste"
+    },
+    {
+      "url": "https://testeapielgeladon.herokuapp.com/paletas",
+      "description": "API de produção"
+    }
+  ],
+  "paths": {
+    "/listar-todas": {
+      "get": {
+        "summary": "Lista de todas as paletas",
+        "description": "Rota responsável por listar todas as paletas",
+        "tags": ["Paletas"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#components/schemas/Paletas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/paleta/{id}": {
+      "get": {
+        "summary": "Busca uma paleta por ID",
+        "description": "Rota responsável por buscar uma paleta por ID",
+        "tags": ["Paletas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da paleta para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "$ref": "#components/schemas/Paletas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/criar-paleta": {
+      "post": {
+        "summary": "Cadastrar uma Paleta",
+        "description": "Rota responsável por cadastrar uma paleta",
+        "tags": ["Paletas"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Paletas"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "sabor": "Chocolate Belga",
+                    "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+                    "foto": "./assets/images/chocolate-belga.png",
+                    "preco": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Paletas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/atualizar-paleta/{id}": {
+      "put": {
+        "summary": "Editar uma paleta pelo ID",
+        "description": "Rota responsável por editar uma paleta pelo ID",
+        "tags": ["Paletas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da paleta para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Paletas"
+              },
+              "examples": {
+                "Paletas": {
+                  "value": {
+                    "sabor": "Chocolate Belga Modificado",
+                    "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+                    "foto": "./assets/images/chocolate-belga.png",
+                    "preco": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Paletas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/excluir-paleta/{id}": {
+      "delete": {
+        "summary": "Apagar uma paleta pelo ID",
+        "description": "Rota responsável por apagar uma paleta pelo ID",
+        "tags": ["Paletas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da paleta para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Paletas": {
+        "type": "object",
+        "properties": {
+          "produto": {
+            "type": "string"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "foto": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
