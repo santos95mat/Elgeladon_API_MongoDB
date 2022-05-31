@@ -19,8 +19,6 @@ Para esta aplicação foi desenvolvida uma API que encaminha para as rotas: (usa
 - /atualizar-paleta/:id 
 - /excluir-paleta/:id 
 
-### Observando os seguintes critérios:
-
 ## Endpoints
 - GET    Leitura de todas os produtos
 - GET    Leitura de produtos individuais (por ID)
