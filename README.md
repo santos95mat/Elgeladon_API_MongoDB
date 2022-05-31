@@ -11,7 +11,13 @@
 
 Este é o segundo projeto do módulo três do curso de Desenvolvimento Full Stack da Blue Edtech.
 
-Para esta aplicação foi desenvolvida uma API que encaminha para as rotas /todos, /:id, /novo, /mudar/:id e /del/:id usando EXPRESS, NODEJS e MONGODB. 
+Para esta aplicação foi desenvolvida uma API que encaminha para as rotas: (usando EXPRESS, NODEJS e MONGODB)
+
+- /listar-todas
+- /paleta/:id 
+- /criar-paleta
+- /atualizar-paleta/:id 
+- /excluir-paleta/:id 
 
 ### Observando os seguintes critérios:
 
