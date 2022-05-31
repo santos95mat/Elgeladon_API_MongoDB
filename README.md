@@ -14,14 +14,21 @@ Este é o segundo projeto do módulo três do curso de Desenvolvimento Full Stac
 Para esta aplicação foi desenvolvida uma API que encaminha para as rotas: (usando EXPRESS, NODEJS e MONGODB)
 
 - /listar-todas
-- /paleta/:id 
+- /paleta/:id
 - /criar-paleta
-- /atualizar-paleta/:id 
-- /excluir-paleta/:id 
+- /atualizar-paleta/:id
+- /excluir-paleta/:id
 
 ## Endpoints
-- GET    Leitura de todas os produtos
-- GET    Leitura de produtos individuais (por ID)
-- POST   Criação de produtos
-- PUT    Edição de produtos por ID
+
+- GET Leitura de todas os produtos
+- GET Leitura de produtos individuais (por ID)
+- POST Criação de produtos
+- PUT Edição de produtos por ID
 - DELETE Exclusão de produtos por ID
+
+## Link para teste API
+
+<a href="https://api-elgeladon-mongo.herokuapp.com/paletas/info/">
+  <img width="128px" src="https://github.com/santos95mat/Elgeladon_FRONTEND/blob/main/assets/icons/logo.svg" />
+</a>
