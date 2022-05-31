@@ -15,7 +15,7 @@
       "description": "API de teste"
     },
     {
-      "url": "https://testeapielgeladonv2.herokuapp.com/paletas",
+      "url": "https://api-elgeladon-mongo.herokuapp.com/paletas",
       "description": "API de produção"
     }
   ],
