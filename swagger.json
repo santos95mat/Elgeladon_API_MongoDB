@@ -11,16 +11,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/paletas",
+      "url": "http://localhost:3000/",
       "description": "API de teste"
     },
     {
-      "url": "https://api-elgeladon-mongo.herokuapp.com/paletas",
+      "url": "https://api-elgeladon-mongo.herokuapp.com/",
       "description": "API de produção"
     }
   ],
   "paths": {
-    "/listar-todas": {
+    "paletas/listar-todas": {
       "get": {
         "summary": "Lista de todas as paletas",
         "description": "Rota responsável por listar todas as paletas",
@@ -45,7 +45,7 @@
         }
       }
     },
-    "/paleta/{id}": {
+    "paletas/paleta/{id}": {
       "get": {
         "summary": "Busca uma paleta por ID",
         "description": "Rota responsável por buscar uma paleta por ID",
@@ -76,7 +76,7 @@
         }
       }
     },
-    "/criar-paleta": {
+    "paletas/criar-paleta": {
       "post": {
         "summary": "Cadastrar uma Paleta",
         "description": "Rota responsável por cadastrar uma paleta",
@@ -118,7 +118,7 @@
         }
       }
     },
-    "/atualizar-paleta/{id}": {
+    "paletas/atualizar-paleta/{id}": {
       "put": {
         "summary": "Editar uma paleta pelo ID",
         "description": "Rota responsável por editar uma paleta pelo ID",
@@ -168,7 +168,7 @@
         }
       }
     },
-    "/excluir-paleta/{id}": {
+    "paletas/excluir-paleta/{id}": {
       "delete": {
         "summary": "Apagar uma paleta pelo ID",
         "description": "Rota responsável por apagar uma paleta pelo ID",
