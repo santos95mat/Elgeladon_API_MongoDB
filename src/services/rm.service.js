@@ -31,15 +31,10 @@ class CharactersService {
       url, 
       created
     };
-    const vCharacter = await Characters.findOne({ name }).exec();
 
-    if (!vCharacter) {
-      const character = await Characters.create(novoCharacter);
+    const character = await Characters.create(novoCharacter);
 
-      return character;
-    } else {
-      throw { status: 401, message: 'Personagem ja cadastrado' };
-    }
+    return character;
   }
 
   async atualizarCharacter({ id, name, status, species, type, gender, origin, location, image, episode, url, created }) {
