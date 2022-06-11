@@ -57,13 +57,7 @@ class CharactersService {
       created
     };
 
-    const vCharacter = await Characters.findOne({ sabor }).exec();
-
-    if (!vCharacter) {
-      await Characters.updateOne({ _id: id }, characterAtualizada);
-    } else {
-      throw { status: 401, message: 'Personagem ja cadastrado' };
-    }
+    await Characters.updateOne({ _id: id }, characterAtualizada);
 
     const character = await Characters.findById(id);
 
